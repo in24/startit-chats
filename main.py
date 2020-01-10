@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 
 app = Flask('app')
@@ -6,7 +6,11 @@ app = Flask('app')
 
 @app.route('/')
 def index_page():
-  return "Sveicieniņš no In24!"
+  return render_template('index.html')
+
+@app.route('/veseliba')
+def veseliba():
+  return "OK"
 
 
 if __name__ == '__main__':
