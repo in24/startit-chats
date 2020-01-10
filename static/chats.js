@@ -29,3 +29,9 @@ async function suutiZinju() {
   const datuObjekts = await atbilde.json();
   raadiChatuVienkarsi(datuObjekts);
 }
+let ievadesLauks = document.getElementById("zinja");
+ievadesLauks.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    suutiZinju();
+  }
+});
