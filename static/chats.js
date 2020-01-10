@@ -42,7 +42,7 @@ function raadiChataRindas(dati) {
     chatUL.firstChild.remove();
   }
   for (let rinda of dati["chats"]) {
-    chatLI = izveidoJaunuRindu(rinda.rinda);
+    chatLI = izveidoJaunuRindu(rinda);
     chatUL.appendChild(chatLI);
   }
   // noskrolleejam uz leju pie peedeejaa chata texta
