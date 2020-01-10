@@ -15,4 +15,17 @@ function raadiChatuVienkarsi(dati) {
   }
   chataDiv.innerHTML = chats;
 }
-function suutiZinju() {}
+async function suutiZinju() {
+  let zinjasElements = document.getElementById("zinja");
+  let zinja = zinjasElements.value;
+  zinjasElements = "";
+  const atbilde = await fetch("/chats/suuti", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ chats: zinja })
+  });
+  const datuObjekts = await atbilde.json();
+  raadiChatuVienkarsi(datuObjekts);
+}
