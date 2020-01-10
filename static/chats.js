@@ -18,7 +18,7 @@ function raadiChatuVienkarsi(dati) {
 async function suutiZinju() {
   let zinjasElements = document.getElementById("zinja");
   let zinja = zinjasElements.value;
-  zinjasElements = "";
+  zinjasElements.value = "";
   const atbilde = await fetch("/chats/suuti", {
     method: "POST",
     headers: {
